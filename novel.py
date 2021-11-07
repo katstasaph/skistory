@@ -1,11 +1,6 @@
-global used_text
-used_text = None
-
-global words
-words = 0
-
-global skinovel
-skinovel = open("skinovel.txt", "w+")
+import json
+import random
+import novelvars
 
 starter_text = {
     "Time:": "I told myself I wasn't going to ski long.",
@@ -13,6 +8,27 @@ starter_text = {
     "Speed:": "Or ski too fast.",
     "Style:": "I don't know how to ski."
 }
+
+def write_text(text):
+    novelvars.skinovel.write("%s \n" % (text))
+    novelvars.sentences += 1
+    novelvars.words += len(text.split())
+
+def print_flavor_text():
+    while True:
+        flavor_text = random.choice(novelvars.flavor_strings)
+        if not flavor_text["usable"]:
+            continue
+        text_roll = random.randint(0, 100)
+        if flavor_text["probability"] < text_roll:
+            continue
+        break
+    if "onetime" in flavor_text["tags"]:
+        for i in range(len(novelvars.flavor_strings)):
+            if novelvars.flavor_strings[i]["text"] == flavor_text["text"]:
+                novelvars.flavor_strings[i]["usable"] = False
+                break
+    write_text(flavor_text["text"])
 
 def parse_text(text):
     if text in starter_text:
@@ -37,9 +53,14 @@ def get_speed_text(text):
 
 def get_distance_text(text):
     distance = get_skifree_number(text)
+    distance_delta = novelvars.last_distance - distance
+    novelvars.last_distance = distance
     if distance > 2000:
         return "I've gone too far..."
-    return ("I've gone %s meters." %(text))
+    distance_text = ("I've gone %s meters now." %(text))
+    if distance_delta < 0:
+        distance_text += " It takes all my energy to go back."
+    return distance_text
 
 def get_style_text(text):
     style = get_skifree_number(text)

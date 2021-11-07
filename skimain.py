@@ -2,7 +2,7 @@
 
 import win32com.client
 import ctypes, sys
-import novel
+import novelvars
 
 from skievents import NktSpyMgrEvents
 from skifunctions import *
@@ -26,6 +26,7 @@ skifree = runAndHookSkiFree(spyManager)
 MessageBox = ctypes.windll.user32.MessageBoxW
 MessageBox(None, "Placeholder, this will ideally exit when we have 50,000.", "SkiHook", 0)
 
-novel.skinovel.close()
+novelvars.skinovel.close()
+novelvars.flavor_text.close()
 skifree.Terminate(0)
 
