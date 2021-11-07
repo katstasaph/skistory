@@ -1,40 +1,880 @@
-And then: Time: 
-And then: Dist: 
-And then: Speed: 
-And then: Style: 
-And then:  0:00:00.00 
-And then:    00m 
-And then:    00m/s 
-And then:       0 
-And then:  0:00:00.00 
-And then:    00m 
-And then:    00m/s 
-And then:       0 
-And then:  0:00:00.00 
-And then:    00m 
-And then:    05m/s 
-And then:       0 
-And then:  0:00:00.00 
-And then:    03m 
-And then:    14m/s 
-And then:       0 
-And then:  0:00:00.00 
-And then:    09m 
-And then:    22m/s 
-And then:       0 
-And then:  0:00:00.00 
-And then:    18m 
-And then:    31m/s 
-And then:       0 
-And then:  0:00:00.00 
-And then:    28m 
-And then:    30m/s 
-And then:       0 
-And then:  0:00:00.00 
-And then:    35m 
-And then:    21m/s 
-And then:       0 
-And then:  0:00:00.00 
-And then:   996m 
-And then:    26m/s 
-And then:       0 
+I told myself I wasn't going to ski long. 
+Or ski far. 
+Or ski too fast. 
+I don't know how to ski. 
+I don't know how long I've been out here. 
+I've gone    00m meters. 
+I'm going    00m/s. 
+Am I skiing well? 
+I don't know how long I've been out here. 
+I've gone    00m meters. 
+I'm going    06m/s. 
+Am I skiing well? 
+I don't know how long I've been out here. 
+I've gone    04m meters. 
+I'm going    15m/s. 
+Am I skiing well? 
+I don't know how long I've been out here. 
+I've gone    10m meters. 
+I'm going    21m/s. 
+Am I skiing well? 
+I don't know how long I've been out here. 
+I've gone    17m meters. 
+I'm going    21m/s. 
+Am I skiing well? 
+I don't know how long I've been out here. 
+I've gone    24m meters. 
+I'm going    21m/s. 
+Am I skiing well? 
+I don't know how long I've been out here. 
+I've gone    31m meters. 
+I'm going    10m/s. 
+Am I skiing well? 
+I don't know how long I've been out here. 
+I've gone    36m meters. 
+I'm going    19m/s. 
+Am I skiing well? 
+I don't know how long I've been out here. 
+I've gone   998m meters. 
+I'm going    23m/s. 
+Am I skiing well? 
+I don't know how long I've been out here. 
+I've gone   998m meters. 
+I'm going    14m/s. 
+Am I skiing well? 
+I don't know how long I've been out here. 
+I've gone   998m meters. 
+I'm going    05m/s. 
+Am I skiing well? 
+I don't know how long I've been out here. 
+I've gone   998m meters. 
+I'm going    00m/s. 
+Am I skiing well? 
+I don't know how long I've been out here. 
+I've gone   998m meters. 
+I'm going    02m/s. 
+Am I skiing well? 
+I don't know how long I've been out here. 
+I've gone   996m meters. 
+I'm going    11m/s. 
+Am I skiing well? 
+I don't know how long I've been out here. 
+I've gone   990m meters. 
+I'm going    21m/s. 
+Am I skiing well? 
+I don't know how long I've been out here. 
+I've gone   983m meters. 
+I'm going    27m/s. 
+Am I skiing well? 
+I don't know how long I've been out here. 
+I've gone   974m meters. 
+I'm going    18m/s. 
+Am I skiing well? 
+I don't know how long I've been out here. 
+I've gone   969m meters. 
+I'm going    04m/s. 
+Am I skiing well? 
+I don't know how long I've been out here. 
+I've gone   969m meters. 
+I'm going    01m/s. 
+Am I skiing well? 
+I don't know how long I've been out here. 
+I've gone   967m meters. 
+I'm going    10m/s. 
+Am I skiing well? 
+I don't know how long I've been out here. 
+I've gone   963m meters. 
+I'm going    16m/s. 
+Am I skiing well? 
+I don't know how long I've been out here. 
+I've gone   959m meters. 
+I'm going    07m/s. 
+Am I skiing well? 
+I don't know how long I've been out here. 
+I've gone   956m meters. 
+I'm going    14m/s. 
+Am I skiing well? 
+I don't know how long I've been out here. 
+I've gone   950m meters. 
+I'm going    21m/s. 
+Am I skiing well? 
+I don't know how long I've been out here. 
+I've gone   943m meters. 
+I'm going    21m/s. 
+Am I skiing well? 
+I don't know how long I've been out here. 
+I've gone   940m meters. 
+I'm going    15m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone   940m meters. 
+I'm going    06m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone   940m meters. 
+I'm going    00m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone   939m meters. 
+I'm going    06m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone   932m meters. 
+I'm going    15m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone   919m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone   906m meters. 
+I'm going    10m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone   899m meters. 
+I'm going    15m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone   886m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone   872m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone   856m meters. 
+I'm going    30m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone   837m meters. 
+I'm going    32m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone   821m meters. 
+I'm going    30m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone   800m meters. 
+I'm going    29m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone   781m meters. 
+I'm going    29m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone   762m meters. 
+I'm going    30m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone   751m meters. 
+I'm going    22m/s. 
+Am I skiing well? 
+I don't know how long I've been out here. 
+I've gone   751m meters. 
+I'm going    13m/s. 
+Am I skiing well? 
+I don't know how long I've been out here. 
+I've gone   751m meters. 
+I'm going    03m/s. 
+Am I skiing well? 
+I don't know how long I've been out here. 
+I've gone   750m meters. 
+I'm going    03m/s. 
+Am I skiing well? 
+I don't know how long I've been out here. 
+I've gone   745m meters. 
+I'm going    13m/s. 
+Am I skiing well? 
+I don't know how long I've been out here. 
+I've gone   734m meters. 
+I'm going    21m/s. 
+Am I skiing well? 
+I don't know how long I've been out here. 
+I've gone   719m meters. 
+I'm going    25m/s. 
+Check out my sick moves. 
+I don't know how long I've been out here. 
+I've gone   701m meters. 
+I'm going    31m/s. 
+Check out my sick moves. 
+I don't know how long I've been out here. 
+I've gone   680m meters. 
+I'm going    29m/s. 
+Check out my sick moves. 
+I don't know how long I've been out here. 
+I've gone   660m meters. 
+I'm going    31m/s. 
+Check out my sick moves. 
+I don't know how long I've been out here. 
+I've gone   640m meters. 
+I'm going    31m/s. 
+Check out my sick moves. 
+I don't know how long I've been out here. 
+I've gone   622m meters. 
+I'm going    21m/s. 
+Check out my sick moves. 
+I don't know how long I've been out here. 
+I've gone   613m meters. 
+I'm going    02m/s. 
+Check out my sick moves. 
+I don't know how long I've been out here. 
+I've gone   613m meters. 
+I'm going    00m/s. 
+Check out my sick moves. 
+I don't know how long I've been out here. 
+I've gone   613m meters. 
+I'm going    00m/s. 
+Check out my sick moves. 
+I don't know how long I've been out here. 
+I've gone   613m meters. 
+I'm going    00m/s. 
+Check out my sick moves. 
+I don't know how long I've been out here. 
+I've gone   612m meters. 
+I'm going    05m/s. 
+Check out my sick moves. 
+I don't know how long I've been out here. 
+I've gone   606m meters. 
+I'm going    14m/s. 
+Check out my sick moves. 
+I don't know how long I've been out here. 
+I've gone   594m meters. 
+I'm going    21m/s. 
+Check out my sick moves. 
+I don't know how long I've been out here. 
+I've gone   583m meters. 
+I'm going    14m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone   583m meters. 
+I'm going    05m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone   583m meters. 
+I'm going    02m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone   578m meters. 
+I'm going    12m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone   569m meters. 
+I'm going    15m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone   557m meters. 
+I'm going    22m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone   539m meters. 
+I'm going    27m/s. 
+Check out my sick moves. 
+I don't know how long I've been out here. 
+I've gone   520m meters. 
+I'm going    29m/s. 
+Check out my sick moves. 
+I don't know how long I've been out here. 
+I've gone   504m meters. 
+I'm going    27m/s. 
+Check out my sick moves. 
+I don't know how long I've been out here. 
+I've gone   504m meters. 
+I'm going    18m/s. 
+Check out my sick moves. 
+I don't know how long I've been out here. 
+I've gone   504m meters. 
+I'm going    09m/s. 
+Check out my sick moves. 
+I don't know how long I've been out here. 
+I've gone   504m meters. 
+I'm going    00m/s. 
+Check out my sick moves. 
+I don't know how long I've been out here. 
+I've gone   502m meters. 
+I'm going    07m/s. 
+Check out my sick moves. 
+I don't know how long I've been out here. 
+I've gone   494m meters. 
+I'm going    17m/s. 
+Check out my sick moves. 
+I don't know how long I've been out here. 
+I've gone   483m meters. 
+I'm going    15m/s. 
+Check out my sick moves. 
+I don't know how long I've been out here. 
+I've gone   473m meters. 
+I'm going    15m/s. 
+Check out my sick moves. 
+I don't know how long I've been out here. 
+I've gone   461m meters. 
+I'm going    21m/s. 
+Check out my sick moves. 
+I don't know how long I've been out here. 
+I've gone   447m meters. 
+I'm going    21m/s. 
+Check out my sick moves. 
+I don't know how long I've been out here. 
+I've gone   434m meters. 
+I'm going    11m/s. 
+Check out my sick moves. 
+I don't know how long I've been out here. 
+I've gone   424m meters. 
+I'm going    21m/s. 
+Check out my sick moves. 
+I don't know how long I've been out here. 
+I've gone   410m meters. 
+I'm going    15m/s. 
+Check out my sick moves. 
+I don't know how long I've been out here. 
+I've gone   407m meters. 
+I'm going    09m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone   407m meters. 
+I'm going    00m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone   407m meters. 
+I'm going    00m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone   405m meters. 
+I'm going    07m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone   397m meters. 
+I'm going    17m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone   386m meters. 
+I'm going    15m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone   375m meters. 
+I'm going    16m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone   365m meters. 
+I'm going    18m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone   350m meters. 
+I'm going    26m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone   331m meters. 
+I'm going    26m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone   316m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone   302m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone   291m meters. 
+I'm going    15m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone   280m meters. 
+I'm going    15m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone   270m meters. 
+I'm going    17m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone   257m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone   247m meters. 
+I'm going    13m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone   241m meters. 
+I'm going    07m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone   236m meters. 
+I'm going    11m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone   225m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone   209m meters. 
+I'm going    22m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone   196m meters. 
+I'm going    10m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone   191m meters. 
+I'm going    05m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone   190m meters. 
+I'm going    03m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone   184m meters. 
+I'm going    13m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone   173m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone   158m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone   137m meters. 
+I'm going    18m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone   125m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone   113m meters. 
+I'm going    15m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone   103m meters. 
+I'm going    15m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone    90m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone    76m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone    62m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone    48m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone    39m meters. 
+I'm going    10m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone    29m meters. 
+I'm going    19m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone    17m meters. 
+I'm going    15m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone    07m meters. 
+I'm going    18m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1040m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1040m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1054m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1067m meters. 
+I'm going    15m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1078m meters. 
+I'm going    15m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1088m meters. 
+I'm going    15m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1101m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1115m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1129m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1143m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1157m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1171m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1185m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1199m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1213m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1227m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1241m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1255m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1269m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1283m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1297m meters. 
+I'm going    18m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1304m meters. 
+I'm going    00m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1304m meters. 
+I'm going    03m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1309m meters. 
+I'm going    13m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1321m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1335m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1349m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1363m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1377m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1391m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1405m meters. 
+I'm going    18m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1416m meters. 
+I'm going    15m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1428m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1442m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1456m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1470m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1484m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1498m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1512m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1526m meters. 
+I'm going    15m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1531m meters. 
+I'm going    00m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1532m meters. 
+I'm going    03m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1536m meters. 
+I'm going    12m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1541m meters. 
+I'm going    07m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1549m meters. 
+I'm going    17m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1563m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1577m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1591m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1605m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1618m meters. 
+I'm going    15m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1628m meters. 
+I'm going    15m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1639m meters. 
+I'm going    15m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1649m meters. 
+I'm going    15m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1662m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1676m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1690m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1704m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1712m meters. 
+I'm going    02m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1717m meters. 
+I'm going    11m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1727m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1741m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1755m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1769m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1783m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1797m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1811m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1821m meters. 
+I'm going    08m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1829m meters. 
+I'm going    17m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1843m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1857m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1873m meters. 
+I'm going    30m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1879m meters. 
+I'm going    22m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1879m meters. 
+I'm going    13m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1879m meters. 
+I'm going    03m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1879m meters. 
+I'm going    00m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1882m meters. 
+I'm going    09m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1890m meters. 
+I'm going    18m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1904m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1918m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1932m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1946m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1960m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1974m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone  1988m meters. 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone too far... 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone too far... 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone too far... 
+I'm going    21m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone too far... 
+I'm going    05m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone    00m meters. 
+I'm going    00m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone    00m meters. 
+I'm going    00m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone    00m meters. 
+I'm going    00m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone    00m meters. 
+I'm going    00m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone    00m meters. 
+I'm going    00m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone    00m meters. 
+I'm going    00m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone    00m meters. 
+I'm going    00m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone    00m meters. 
+I'm going    00m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone    00m meters. 
+I'm going    00m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone    00m meters. 
+I'm going    00m/s. 
+I suck at skiing. 
+I don't know how long I've been out here. 
+I've gone    00m meters. 
+I'm going    00m/s. 
+I suck at skiing. 

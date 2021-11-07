@@ -6,7 +6,6 @@ def GetPIDByProcessName(aProcessName):
             return proc.pid
 
 def openSkiFree(spyManager):
-    print("Starting SkiFree...")
     skiFreePath = "skifree.exe"
     skifree, continueEvent = spyManager.CreateProcess(skiFreePath, True)
     if skifree is None:
