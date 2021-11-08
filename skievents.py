@@ -8,7 +8,7 @@ class NktSpyMgrEvents:
 
     def OnFunctionCalled(self, nktHookAsPyIDispatch, nktProcessAsPyIDispatch, nktHookCallInfoAsPyIDispatch):
         nktHookCallInfo = win32com.client.Dispatch(nktHookCallInfoAsPyIDispatch)
-        skiString = nktHookCallInfo.Params().GetAt(3)
+        skiString = nktHookCallInfo.Params().GetAt(3) # get param #4 of TextOutA: lpString
         if novelvars.sentences > 4: # no flavor text before we get the intro in
             novel.print_flavor_text()
         new_text = str(skiString)

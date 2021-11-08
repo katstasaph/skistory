@@ -19,6 +19,8 @@ def print_flavor_text():
         flavor_text = random.choice(novelvars.flavor_strings)
         if not flavor_text["usable"]:
             continue
+        if "intro" in flavor_text["tags"] and novelvars.on_route:
+            continue
         text_roll = random.randint(0, 100)
         if flavor_text["probability"] < text_roll:
             continue
@@ -49,7 +51,11 @@ def get_time_text(text):
         return ("I've been out here %s." %(text))
 
 def get_speed_text(text):
-    return ("I'm going %s." %(text))
+    speed = get_skifree_number(text)
+    if speed > 21:
+        return ("I'm airborne.")
+    else:
+        return ("I'm going %s." %(text))
 
 def get_distance_text(text):
     distance = get_skifree_number(text)
@@ -57,9 +63,11 @@ def get_distance_text(text):
     novelvars.last_distance = distance
     if distance > 2000:
         return "I've gone too far..."
-    distance_text = ("I've gone %s meters now." %(text))
+    if distance_delta > 400: # When you choose a route (slalom etc), distance jumps from ~30 to ~500/1000/~1200...
+        novelvars.on_route = True
+    distance_text = ("I've gone %s now." %(text))
     if distance_delta < 0:
-        distance_text += " It takes all my energy to go back."
+        distance_text += " It takes all my energy to hoist my skis upward and go back."
     return distance_text
 
 def get_style_text(text):
@@ -73,7 +81,7 @@ def get_style_text(text):
 
 def get_skifree_number(text):
     text = text.strip().strip("m/s").strip("m")
-    if text != "0" and text != "00": # strip leading zeroes if any
+    if text != "0" and text != "00": # check for possible strings of just 0
         return int(text.lstrip("0"))
     else:
         return int(text)

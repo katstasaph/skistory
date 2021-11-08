@@ -1,5 +1,7 @@
 import json
 
+# I know I know I know
+
 global used_text
 used_text = None
 
@@ -8,6 +10,9 @@ last_distance = 0
 
 global last_speed
 last_speed = 0
+
+global on_route
+on_route = False
 
 global sentences
 sentences = 0
