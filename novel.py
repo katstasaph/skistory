@@ -2,6 +2,8 @@ import json
 import random
 import novelvars
 
+extra_text_chance = 50
+
 starter_text = {
     "Time:": "I told myself I wasn't going to ski long.",
     "Dist:": "Or ski far.",
@@ -16,21 +18,21 @@ def write_text(text):
 
 def print_flavor_text():
     while True:
-        flavor_text = random.choice(novelvars.flavor_strings)
-        if not flavor_text["usable"]:
-            continue
+        flavor_text = get_tailored_text("generic")
         if "intro" in flavor_text["tags"] and novelvars.on_route:
             continue
         text_roll = random.randint(0, 100)
         if flavor_text["probability"] < text_roll:
             continue
+        chosen_text = flavor_text["text"]
+        chosen_text += roll_for_extra_text("generic2", chosen_text)
         break
     if "onetime" in flavor_text["tags"]:
         for i in range(len(novelvars.flavor_strings)):
             if novelvars.flavor_strings[i]["text"] == flavor_text["text"]:
                 novelvars.flavor_strings[i]["usable"] = False
                 break
-    write_text(flavor_text["text"])
+    write_text(chosen_text)
 
 def parse_text(text):
     if text in starter_text:
@@ -46,14 +48,20 @@ def parse_text(text):
 
 def get_time_text(text):
     if "0:00:00.00" in text:
-        return "I don't know how long I've been out here."
+        if novelvars.on_route:
+            return get_tailored_text("notime")["text"]
+
+        else:
+            return get_tailored_text("notimeintro")["text"]
     else:
         return ("I've been out here %s." %(text))
 
 def get_speed_text(text):
     speed = get_skifree_number(text)
     if speed > 21:
-        return get_tailored_text("airborne")
+        speed_text = get_tailored_text("airborne")["text"]
+        speed_text += roll_for_extra_text("airborne2")
+        return speed_text
     else:
         return ("I'm going %s." %(text))
 
@@ -63,12 +71,17 @@ def get_distance_text(text):
     novelvars.last_distance = distance
     if distance > 2000:
         return "I've gone too far..."
-    if abs(distance_delta) > 400: # When you choose a route (slalom etc), distance jumps from ~30 to ~500/1000/~1200
-        novelvars.on_route = True
+    update_distance_state(distance, distance_delta)
     distance_text = ("I've gone %s now." %(text))
     if distance_delta < 0 and novelvars.on_route:
-        distance_text += " It takes all my energy to hoist my skis upward and go back."
+        distance_text += (" " + get_tailored_text("backward")["text"])
     return distance_text
+
+def update_distance_state(distance, delta):
+    if distance > 1001:
+        novelvars.on_route = False
+    if abs(delta) > 400: # When you choose a route (slalom etc), distance jumps from ~30 to ~500/1000/~1200
+        novelvars.on_route = True
 
 def get_style_text(text):
     style = get_skifree_number(text)
@@ -87,5 +100,21 @@ def get_skifree_number(text):
         return int(text)
 
 def get_tailored_text(tag):
-    filtered_text = [text for text in novelvars.flavor_strings if tag in text["tags"]]
-    return random.choice(filtered_text)["text"]
+    while True:
+        filtered_text = [text for text in novelvars.flavor_strings if tag in text["tags"]]
+        tailored_text = random.choice(filtered_text)
+        if not tailored_text["usable"]:
+            continue
+        break
+    return tailored_text
+
+def roll_for_extra_text(specific_tag, repeatable_text = None):
+    extra_text_roll = random.randint(0, 100)
+    if extra_text_chance > extra_text_roll:
+        extra_text = get_tailored_text(specific_tag)["text"]
+        if repeatable_text and repeatable_text == extra_text:
+            return ""
+        else:
+            return (" " + extra_text)
+    else:
+        return ""
