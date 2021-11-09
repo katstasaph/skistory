@@ -7,8 +7,6 @@ import novelvars
 from skievents import NktSpyMgrEvents
 from skifunctions import *
 
-used_text = None
-
 if sys.version_info.major < 3:
     warnings.warn("Need Python 3.0 for this program to run", RuntimeWarning)
     sys.exit(0)

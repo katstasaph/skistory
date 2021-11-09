@@ -53,7 +53,7 @@ def get_time_text(text):
 def get_speed_text(text):
     speed = get_skifree_number(text)
     if speed > 21:
-        return ("I'm airborne.")
+        return get_tailored_text("airborne")
     else:
         return ("I'm going %s." %(text))
 
@@ -63,10 +63,10 @@ def get_distance_text(text):
     novelvars.last_distance = distance
     if distance > 2000:
         return "I've gone too far..."
-    if distance_delta > 400: # When you choose a route (slalom etc), distance jumps from ~30 to ~500/1000/~1200...
+    if abs(distance_delta) > 400: # When you choose a route (slalom etc), distance jumps from ~30 to ~500/1000/~1200
         novelvars.on_route = True
     distance_text = ("I've gone %s now." %(text))
-    if distance_delta < 0:
+    if distance_delta < 0 and novelvars.on_route:
         distance_text += " It takes all my energy to hoist my skis upward and go back."
     return distance_text
 
@@ -85,3 +85,7 @@ def get_skifree_number(text):
         return int(text.lstrip("0"))
     else:
         return int(text)
+
+def get_tailored_text(tag):
+    filtered_text = [text for text in novelvars.flavor_strings if tag in text["tags"]]
+    return random.choice(filtered_text)["text"]
