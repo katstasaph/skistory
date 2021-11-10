@@ -3,13 +3,16 @@ import random
 import novelvars
 
 extra_text_chance = 50
+max_ground_speed = 21 # Any speed > 21 means we've jumped
+max_safe_distance = 2000 # After this distance the yeti appears
+post_route_distance = 1001 # The post-route stretch is 1000 on
+new_route_delta = 400 # When you choose a route (slalom etc), distance jumps from ~30 to ~500-1200
 
-starter_text = {
-    "Time:": "I told myself I wasn't going to ski long.",
-    "Dist:": "Or ski far.",
-    "Speed:": "Or ski too fast.",
-    "Style:": "I don't know how to ski."
-}
+# Characters that only appear in specific categories of string from SkiFree, so we can tell what string type we have
+
+time_string_indicator = ":" # Colons only show up in time strings
+speed_string_indicator = "m/s" # "m/s" only shows up in the strings strings
+distance_string_indicator = "m" # "m" alone shows up in distance strings, but we check speed first
 
 def write_text(text):
     novelvars.skinovel.write("%s \n" % (text))
@@ -35,13 +38,13 @@ def print_flavor_text():
     write_text(chosen_text)
 
 def parse_text(text):
-    if text in starter_text:
-        return starter_text.get(text)
-    elif ":" in text:  # only shows up in time...
+    if text in novelvars.starter_text:
+        return novelvars.starter_text.get(text)
+    elif time_string_indicator in text:
         return get_time_text(text)
-    elif "m/s" in text:  # speed...
+    elif speed_string_indicator in text:
         return get_speed_text(text)
-    elif "m" in text:  # distance (we do speed first since m/s contains m)
+    elif distance_string_indicator in text:
         return get_distance_text(text)
     else:  # style
         return get_style_text(text)
@@ -58,29 +61,47 @@ def get_time_text(text):
 
 def get_speed_text(text):
     speed = get_skifree_number(text)
-    if speed > 21:
+    update_speed_state(speed)
+    if check_crash():
+        speed_text = ((random.choice(novelvars.crash_preambles)) + get_tailored_text("crash")["text"])
+        speed_text += roll_for_extra_text("crash2")
+        return speed_text
+    if speed > max_ground_speed:
         speed_text = get_tailored_text("airborne")["text"]
         speed_text += roll_for_extra_text("airborne2")
         return speed_text
     else:
         return ("I'm going %s." %(text))
 
+def update_speed_state(speed):
+    novelvars.last_speeds.popleft()
+    novelvars.last_speeds.append(speed)
+
+# A quick and dirty method of crash detection, using text only. It errs on the side of false negatives.
+# Basically: Did our speed go from normal to 0 suddenly, and did we stop moving?
+def check_crash():
+    return abs(novelvars.last_speeds[0] - novelvars.last_speeds[2]) > 7 and novelvars.last_distance_delta == 0
+
 def get_distance_text(text):
     distance = get_skifree_number(text)
     distance_delta = novelvars.last_distance - distance
-    novelvars.last_distance = distance
-    if distance > 2000:
-        return "I've gone too far..."
     update_distance_state(distance, distance_delta)
     distance_text = ("I've gone %s now." %(text))
-    if distance_delta < 0 and novelvars.on_route:
+    if distance > max_safe_distance:
+        distance_text += " I've gone too far..."
+    elif distance > post_route_distance:
+        distance_postscript = get_tailored_text("postroute")["text"]
+        distance_text += (" " + distance_postscript + roll_for_extra_text("postroute", distance_postscript))
+    elif distance_delta < 0 and novelvars.on_route:
         distance_text += (" " + get_tailored_text("backward")["text"])
     return distance_text
 
 def update_distance_state(distance, delta):
-    if distance > 1001:
+    novelvars.last_distance = distance
+    novelvars.last_distance_delta = delta
+    if distance > post_route_distance:
         novelvars.on_route = False
-    if abs(delta) > 400: # When you choose a route (slalom etc), distance jumps from ~30 to ~500/1000/~1200
+    if abs(delta) > new_route_delta:
         novelvars.on_route = True
 
 def get_style_text(text):
