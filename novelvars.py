@@ -17,6 +17,9 @@ last_speeds = collections.deque((0, 0, 0))
 global on_route
 on_route = False
 
+global post_ski
+post_ski = False
+
 global sentences
 sentences = 0
 

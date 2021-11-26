@@ -5,7 +5,7 @@ import novelvars
 extra_text_chance = 50
 max_ground_speed = 21 # Any speed > 21 means we've jumped
 max_safe_distance = 2000 # After this distance the yeti appears
-post_route_distance = 1001 # The post-route stretch is 1000 on
+post_route_distance = 1020 # The post-route stretch is 1000 on
 new_route_delta = 400 # When you choose a route (slalom etc), distance jumps from ~30 to ~500-1200
 
 # Characters that only appear in specific categories of string from SkiFree, so we can tell what string type we have
@@ -101,17 +101,22 @@ def update_distance_state(distance, delta):
     novelvars.last_distance_delta = delta
     if distance > post_route_distance:
         novelvars.on_route = False
+        novelvars.post_ski = True
     if abs(delta) > new_route_delta:
         novelvars.on_route = True
 
 def get_style_text(text):
     style = get_skifree_number(text)
-    if style < 0:
-        return "I suck at skiing."
+    style_text = "I ask myself how I'm skiing. "
+    if novelvars.post_ski:
+        style_text += get_tailored_text("afterscore")["text"]
+    elif style < 0:
+        style_text += get_tailored_text("bad")["text"]
     elif style > 0:
-        return "Check out my sick moves."
+        style_text += get_tailored_text("good")["text"]
     else:
-        return "Am I skiing well?"
+        style_text += get_tailored_text("noscore")["text"]
+    return style_text
 
 def get_skifree_number(text):
     text = text.strip().strip("m/s").strip("m")
