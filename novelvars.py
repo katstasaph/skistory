@@ -6,6 +6,11 @@ import collections
 global used_text
 used_text = None
 
+global last_time
+global last_time_delta
+last_time = 0
+last_time_delta = 0
+
 global last_distance
 global last_distance_delta
 last_distance = 0

@@ -15,5 +15,7 @@ class NktSpyMgrEvents:
         if (novelvars.used_text != new_text):
             text_to_write = novel.parse_text(new_text)
             novel.write_text(text_to_write)
+        if novelvars.post_ski:
+            novel.print_yeti_text()
         novelvars.used_text = str(new_text)
-        print("Sentences: %s; Words: %s" %(str(novelvars.sentences), str(novelvars.words)))
+        print("Words: %s" %(str(novelvars.words)))
