@@ -2,7 +2,9 @@ import json
 import random
 import novelvars
 
-extra_text_chance = 66
+second_text_chance = 75 # padding
+third_text_chance = 66 # more padding
+fourth_text_chance = 50 # love to pad
 yeti_text_roll_bound = 200 # To dampen the spread of yeti text
 max_ground_speed = 21  # Any speed > 21 means we've jumped
 max_safe_distance = 2000  # After this distance the yeti appears
@@ -35,12 +37,14 @@ def print_flavor_text():
         chosen_text += roll_for_extra_text("generic2", chosen_text)
         break
     if "onetime" in flavor_text["tags"]:
-        for i in range(len(novelvars.flavor_strings)):
-            if novelvars.flavor_strings[i]["text"] == flavor_text["text"]:
-                novelvars.flavor_strings[i]["usable"] = False
-                break
+        exhaust_onetime_text(flavor_text)
     write_text(chosen_text)
 
+def exhaust_onetime_text(flavor_text):
+    for i in range(len(novelvars.flavor_strings)):
+        if novelvars.flavor_strings[i]["text"] == flavor_text["text"]:
+            novelvars.flavor_strings[i]["usable"] = False
+            break
 
 def parse_text(text):
     if text in novelvars.starter_text:
@@ -62,12 +66,17 @@ def get_time_text(text):
         else:
             return get_tailored_text("notimeintro")["text"]
     else:
-        time_text = ("I must have been out here something like %s." % (text))
         time = extract_time(text)
         time_delta = abs(novelvars.last_time - time)
+        if novelvars.post_ski:
+            time_text = ("I lost track of time somewhere around %s. " % (text))
+            time_text += get_tailored_text("aftertime")["text"]
+        else:
+            time_text = ("I must have been out here something like %s. " % (text))
+            time_text += get_tailored_text("time")["text"]
         update_time_state(time, time_delta)
         if time_delta > missed_turn_threshold and novelvars.on_route:
-            time_text += (" " + get_tailored_text("missedturn")["text"])
+            time_text += get_tailored_text("missedturn")["text"]
         return time_text
 
 def extract_time(text):
@@ -167,17 +176,31 @@ def get_tailored_text(tag):
         tailored_text = random.choice(filtered_text)
         if not tailored_text["usable"]:
             continue
+        if "onetime" in tailored_text["tags"]:
+            exhaust_onetime_text(tailored_text)
         break
     return tailored_text
 
 
 def roll_for_extra_text(specific_tag, repeatable_text=None):
     extra_text_roll = random.randint(0, 100)
-    if extra_text_chance > extra_text_roll:
+    if second_text_chance > extra_text_roll:
         extra_text = get_tailored_text(specific_tag)["text"]
         if repeatable_text and repeatable_text == extra_text:
             return ""
-        else:
+        else: # needs 100000% more refactoring.
+            repeatable_text = extra_text
+            extra_text_roll = random.randint(0, 100)
+            if third_text_chance > extra_text_roll:
+                third_text = get_tailored_text(specific_tag)["text"]
+                if repeatable_text != third_text:
+                    extra_text += (" " + third_text)
+            repeatable_text = extra_text
+            extra_text_roll = random.randint(0, 100)
+            if fourth_text_chance > extra_text_roll:
+                fourth_text = get_tailored_text(specific_tag)["text"]
+                if repeatable_text != fourth_text:
+                    extra_text += (" " + fourth_text)
             return (" " + extra_text)
     else:
         return ""
