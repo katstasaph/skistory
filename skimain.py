@@ -22,7 +22,7 @@ if not result == 0:
 skifree = runAndHookSkiFree(spyManager)
 
 MessageBox = ctypes.windll.user32.MessageBoxW
-MessageBox(None, "Placeholder, this will ideally exit when we have 50,000.", "SkiHook", 0)
+MessageBox(None, "Finalize story?", "SkiHook", 0)
 
 novelvars.skinovel.close()
 novelvars.flavor_text.close()

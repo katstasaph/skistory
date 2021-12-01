@@ -6,7 +6,11 @@ second_text_chance = 75 # padding
 third_text_chance = 66 # more padding
 fourth_text_chance = 50 # love to pad
 yeti_text_roll_bound = 200 # To dampen the spread of yeti text
+
 max_ground_speed = 21  # Any speed > 21 means we've jumped
+slight_turn_speed = 15 # Turning slightly stabilizes at 15
+sharp_turn_speed = 7 # Turning sharply stabilizes at 7
+
 max_safe_distance = 2000  # After this distance the yeti appears
 post_route_distance = 1020  # The post-route stretch is 1000 on
 new_route_delta = 400  # When you choose a route (slalom etc), distance jumps from ~30 to ~500-1200
@@ -94,25 +98,39 @@ def update_time_state(time, delta):
 def get_speed_text(text):
     speed = get_skifree_number(text)
     update_speed_state(speed)
+    speed_text = None
     if check_crash():
         speed_text = ((random.choice(novelvars.crash_preambles)) + get_tailored_text("crash")["text"])
         speed_text += roll_for_extra_text("crash2", speed_text)
-        return speed_text
     elif speed == 0:
         speed_text = get_tailored_text("stopped")["text"]
         speed_text += roll_for_extra_text("stopped2", speed_text)
-        return speed_text
+    elif speed < 0:
+        speed_text = get_tailored_text("uphill")["text"]
     elif speed > max_ground_speed:
-        speed_text = get_tailored_text("airborne")["text"]
+        speed_text = ("Airborne, going %s meters per hour. " % (str(speed)))
+        speed_text += get_tailored_text("airborne")["text"]
         speed_text += roll_for_extra_text("airborne2", speed_text)
-        return speed_text
     else:
-        return ("I'm going %s meters per hour." % (str(speed)))
-
+        speed_text = ("I'm going %s meters per hour. " % (str(speed)))
+        speed_text += get_specific_speed_text()
+    return speed_text
 
 def update_speed_state(speed):
     novelvars.last_speeds.popleft()
     novelvars.last_speeds.append(speed)
+
+# If the last three updates have all been 21, 15, or 7, we are going steady in that direction
+# Otherwise our speed is changing
+def get_specific_speed_text():
+    if all(x == max_ground_speed for x in novelvars.last_speeds):
+        return get_tailored_text("straight")["text"]
+    elif all(x == slight_turn_speed for x in novelvars.last_speeds):
+        return get_tailored_text("slightturn")["text"]
+    elif all(x == sharp_turn_speed for x in novelvars.last_speeds):
+        return get_tailored_text("sharpturn")["text"]
+    else:
+        return get_tailored_text("speedchange")["text"]
 
 # A quick and dirty method of crash detection, using text only. It errs on the side of false negatives.
 # Basically: Did our speed go from normal to 0 suddenly, and did we stop moving?
@@ -124,14 +142,19 @@ def get_distance_text(text):
     distance = get_skifree_number(text)
     distance_delta = novelvars.last_distance - distance
     update_distance_state(distance, distance_delta)
-    distance_text = ("I've gone %s meters now." % (str(distance)))
+    distance_text = ("I've gone %s meters now. " % (str(distance)))
     if distance > max_safe_distance:
-        distance_text += " I've gone too far..."
+        distance_text += "I've gone too far..."
     elif distance > post_route_distance:
         distance_postscript = get_tailored_text("postroute")["text"]
-        distance_text += (" " + distance_postscript + roll_for_extra_text("postroute", distance_postscript))
+        distance_text += (distance_postscript + roll_for_extra_text("postroute2", distance_postscript))
     elif distance_delta < 0 and novelvars.on_route:
-        distance_text += (" " + get_tailored_text("backward")["text"])
+        distance_text += get_tailored_text("backward")["text"]
+    elif distance_delta < 0 and novelvars.post_ski:
+        distance_postscript = get_tailored_text("backwardpost")["text"]
+        distance_text += (distance_postscript + roll_for_extra_text("backwardpost2", distance_postscript))
+    else:
+        distance_text += get_tailored_text("distance")["text"]
     return distance_text
 
 
@@ -182,25 +205,22 @@ def get_tailored_text(tag):
     return tailored_text
 
 
-def roll_for_extra_text(specific_tag, repeatable_text=None):
+def roll_for_extra_text(specific_tag, repeatable_text=None, extra_sentences=3):
+    if extra_sentences == 3:
+        probability = second_text_chance
+    elif extra_sentences == 2:
+        probability = third_text_chance
+    else:
+        probability = fourth_text_chance
     extra_text_roll = random.randint(0, 100)
-    if second_text_chance > extra_text_roll:
+    if probability > extra_text_roll:
         extra_text = get_tailored_text(specific_tag)["text"]
         if repeatable_text and repeatable_text == extra_text:
             return ""
-        else: # needs 100000% more refactoring.
-            repeatable_text = extra_text
-            extra_text_roll = random.randint(0, 100)
-            if third_text_chance > extra_text_roll:
-                third_text = get_tailored_text(specific_tag)["text"]
-                if repeatable_text != third_text:
-                    extra_text += (" " + third_text)
-            repeatable_text = extra_text
-            extra_text_roll = random.randint(0, 100)
-            if fourth_text_chance > extra_text_roll:
-                fourth_text = get_tailored_text(specific_tag)["text"]
-                if repeatable_text != fourth_text:
-                    extra_text += (" " + fourth_text)
+        elif extra_sentences < 2:
+            return (" ") + extra_text
+        else:
+            extra_text += roll_for_extra_text(specific_tag, extra_text, (extra_sentences - 1))
             return (" " + extra_text)
     else:
         return ""
