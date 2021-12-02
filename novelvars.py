@@ -25,6 +25,9 @@ on_route = False
 global post_ski
 post_ski = False
 
+global danger_zone
+danger_zone = False
+
 global sentences
 sentences = 0
 

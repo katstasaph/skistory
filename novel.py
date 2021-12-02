@@ -98,7 +98,6 @@ def update_time_state(time, delta):
 def get_speed_text(text):
     speed = get_skifree_number(text)
     update_speed_state(speed)
-    speed_text = None
     if check_crash():
         speed_text = ((random.choice(novelvars.crash_preambles)) + get_tailored_text("crash")["text"])
         speed_text += roll_for_extra_text("crash2", speed_text)
@@ -143,8 +142,10 @@ def get_distance_text(text):
     distance_delta = novelvars.last_distance - distance
     update_distance_state(distance, distance_delta)
     distance_text = ("I've gone %s meters now. " % (str(distance)))
-    if distance > max_safe_distance:
-        distance_text += "I've gone too far..."
+    if novelvars.danger_zone:
+        distance_text = "I've gone too far. "
+        distance_text += get_tailored_text("postroute")["text"]
+        distance_text += (" " + get_tailored_text("danger")["text"])
     elif distance > post_route_distance:
         distance_postscript = get_tailored_text("postroute")["text"]
         distance_text += (distance_postscript + roll_for_extra_text("postroute2", distance_postscript))
@@ -161,7 +162,9 @@ def get_distance_text(text):
 def update_distance_state(distance, delta):
     novelvars.last_distance = distance
     novelvars.last_distance_delta = delta
-    if distance > post_route_distance:
+    if distance > max_safe_distance:
+        novelvars.danger_zone = True
+    elif distance > post_route_distance:
         novelvars.on_route = False
         novelvars.post_ski = True
     if abs(delta) > new_route_delta:
