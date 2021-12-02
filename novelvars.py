@@ -19,6 +19,9 @@ last_distance_delta = 0
 global last_speeds
 last_speeds = collections.deque((0, 0, 0))
 
+global slalom
+slalom = False
+
 global on_route
 on_route = False
 

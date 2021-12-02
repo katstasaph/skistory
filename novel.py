@@ -12,8 +12,9 @@ slight_turn_speed = 15 # Turning slightly stabilizes at 15
 sharp_turn_speed = 7 # Turning sharply stabilizes at 7
 
 max_safe_distance = 2000  # After this distance the yeti appears
-post_route_distance = 1020  # The post-route stretch is 1000 on
+post_route_distance = 1010  # The post-route stretch is 1000 on
 new_route_delta = 400  # When you choose a route (slalom etc), distance jumps from ~30 to ~500-1200
+non_slalom_delta = 600 # Slalom starts you at 500, others at 1000, we need this to display distance properly
 missed_turn_threshold = 499 # Missing a turn in slalom/tree slalom deducts 5 seconds.
 
 # Characters that only appear in specific categories of string from SkiFree, so we can tell what string type we have
@@ -31,9 +32,7 @@ def write_text(text):
 
 def print_flavor_text():
     while True:
-        flavor_text = get_tailored_text("generic")
-        if "intro" in flavor_text["tags"] and novelvars.on_route:
-            continue
+        flavor_text = tailor_flavor_text()
         text_roll = random.randint(0, 100)
         if flavor_text["probability"] < text_roll:
             continue
@@ -43,6 +42,14 @@ def print_flavor_text():
     if "onetime" in flavor_text["tags"]:
         exhaust_onetime_text(flavor_text)
     write_text(chosen_text)
+
+def tailor_flavor_text():
+    if not novelvars.on_route and novelvars.last_distance < post_route_distance:
+        return get_tailored_text("intro")
+    elif novelvars.post_ski:
+        return get_tailored_text("postroute")
+    else:
+        return get_tailored_text("generic")
 
 def exhaust_onetime_text(flavor_text):
     for i in range(len(novelvars.flavor_strings)):
@@ -98,6 +105,10 @@ def update_time_state(time, delta):
 def get_speed_text(text):
     speed = get_skifree_number(text)
     update_speed_state(speed)
+    if speed == 1:
+        speed_string = str(speed) + " meter"
+    else:
+        speed_string = str(speed) + " meters"
     if check_crash():
         speed_text = ((random.choice(novelvars.crash_preambles)) + get_tailored_text("crash")["text"])
         speed_text += roll_for_extra_text("crash2", speed_text)
@@ -107,11 +118,11 @@ def get_speed_text(text):
     elif speed < 0:
         speed_text = get_tailored_text("uphill")["text"]
     elif speed > max_ground_speed:
-        speed_text = ("Airborne, going %s meters per hour. " % (str(speed)))
+        speed_text = ("Airborne, going %s per hour. " % (speed_string))
         speed_text += get_tailored_text("airborne")["text"]
         speed_text += roll_for_extra_text("airborne2", speed_text)
     else:
-        speed_text = ("I'm going %s meters per hour. " % (str(speed)))
+        speed_text = ("I'm going %s per hour. " % (speed_string))
         speed_text += get_specific_speed_text()
     return speed_text
 
@@ -141,8 +152,10 @@ def get_distance_text(text):
     distance = get_skifree_number(text)
     distance_delta = novelvars.last_distance - distance
     update_distance_state(distance, distance_delta)
-    distance_text = ("I've gone %s meters now. " % (str(distance)))
-    if novelvars.danger_zone:
+    distance_text = get_generic_distance_text(distance)
+    if not novelvars.on_route and novelvars.last_distance < post_route_distance:
+        distance_text = get_tailored_text("distanceintro")["text"]
+    elif novelvars.danger_zone:
         distance_text = "I've gone too far. "
         distance_text += get_tailored_text("postroute")["text"]
         distance_text += (" " + get_tailored_text("danger")["text"])
@@ -158,6 +171,12 @@ def get_distance_text(text):
         distance_text += get_tailored_text("distance")["text"]
     return distance_text
 
+def get_generic_distance_text(distance):
+    if distance < post_route_distance and novelvars.slalom:
+        distance = 500 - distance
+    elif distance < post_route_distance:
+        distance = 1000 - distance
+    return ("I've gone %s meters now. " % (str(distance)))
 
 def update_distance_state(distance, delta):
     novelvars.last_distance = distance
@@ -169,12 +188,16 @@ def update_distance_state(distance, delta):
         novelvars.post_ski = True
     if abs(delta) > new_route_delta:
         novelvars.on_route = True
+        if abs(delta) < non_slalom_delta:
+            novelvars.slalom = True
 
 
 def get_style_text(text):
     style = get_skifree_number(text)
     style_text = "I ask myself how I'm skiing. "
-    if novelvars.post_ski:
+    if not novelvars.on_route and novelvars.last_distance < post_route_distance:
+       style_text += get_tailored_text("prescore")["text"]
+    elif novelvars.post_ski:
         style_text += get_tailored_text("afterscore")["text"]
     elif style < 0:
         style_text += get_tailored_text("bad")["text"]
